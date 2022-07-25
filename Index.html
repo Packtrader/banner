@@ -130,3 +130,196 @@
 
         top: 0;
 
+      }
+
+      /* The dots/bullets/indicators */
+
+      .dot {
+
+        cursor: pointer;
+
+height: 15px;
+
+        width: 15px;
+
+        margin: 0 2px;
+
+        background-color: #999999;
+
+        border-radius: 50%;
+
+        display: inline-block;
+
+        transition: background-color 0.6s ease;
+
+      }
+
+      .active,
+
+      .dot:hover {
+
+        background-color: #111111;
+
+      }
+
+      /* Fading animation */
+
+      .fade {
+
+        -webkit-animation-name: fade;
+
+        -webkit-animation-duration: 1.5s;
+
+        animation-name: fade;
+
+        animation-duration: 1.5s;
+
+      }
+
+      @-webkit-keyframes fade {
+
+        from {
+
+          opacity: .4
+
+        }
+
+        to {
+
+          opacity: 1
+
+        }
+
+      }
+
+      @keyframes fade {
+
+        from {
+
+          opacity: .4
+
+        }
+
+        to {
+
+          opacity: 1
+
+        }
+
+      }
+
+      /* On smaller screens, decrease text size */
+
+      @media only screen and (max-width: 300px) {
+
+        .prev,
+
+        .next,
+
+        .text {
+
+          font-size: 11px
+
+        }
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+
+        <div class="numbertext"></div>
+
+        <img src="images/01.jpg" style="width:100%">
+
+        <div class="text"></div>
+
+      </div>
+
+      <div class="mySlides fade">
+
+        <div class="numbertext"></div>
+
+        <img src="images/02.jpg" style="width:100%">
+
+        <div class="text"></div>
+
+      </div>
+
+      <div class="mySlides fade">
+
+        <div class="numbertext"></div>
+
+        <img src="images/03.jpg" style="width:100%">
+
+        <div class="text"></div>
+
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <br>
+
+    <div style="text-align:center">
+
+      <span class="dot" onclick="currentSlide(1)">
+
+</span>
+
+      <span class="dot" onclick="currentSlide(2)"></span>
+
+      <span class="dot" onclick="currentSlide(3)"></span>
+
+    </div>
+
+    <script>
+
+      var slideIndex = 0;
+
+      showSlides();
+
+      function showSlides() {
+
+        var i;
+
+        var slides = document.getElementsByClassName("mySlides");
+
+        for(i = 0; i < slides.length; i++) {
+
+          slides[i].style.display = "none";
+
+        }
+
+        slideIndex++;
+
+        if(slideIndex > slides.length) {
+
+          slideIndex = 1
+
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
+
+      
+
+        
